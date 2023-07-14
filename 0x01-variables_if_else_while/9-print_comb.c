@@ -3,32 +3,27 @@
 /**
  * main - Entry point
  *
- * Description: Print all possible combinations of single-digit numbers
+ * Description: Prints all possible combinations of single-digit numbers
  *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-    int digit1, digit2;
+	int digit;
 
-    for (digit1 = 0; digit1 <= 9; digit1++)
-    {
-        for (digit2 = digit1; digit2 <= 9; digit2++)
-        {
-            putchar(digit1 + '0');
-            putchar(digit2 + '0');
+	for (digit = 0; digit <= 9; digit++)
+	{
+		putchar(digit + '0');
+		if (digit != 9)
+		{
+			putchar(',');
+			putchar(' ');
+		}
+	}
 
-            if (digit1 != 9 || digit2 != 9)
-            {
-                putchar(',');
-                putchar(' ');
-            }
-        }
-    }
+	putchar('\n');
 
-    putchar('\n');
-
-    return (0);
+	return (0);
 }
 
 
