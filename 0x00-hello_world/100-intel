@@ -1,17 +1,11 @@
-#include <stdio.h>
+#!/bin/bash
 
-/**
- * main - Entry point of the program
- *
- * Return: Always 0 (Success)
- */
-int main(void)
-{
-    int a = 5;
-    int b = 10;
-    int sum = a + b;
+# Get the C file name from the environment variable
+CFILE="$CFILE"
 
-    printf("Sum: %d\n", sum);
-    return (0);
-}
+# Generate the output file name by replacing .c with .s
+OUTFILE="${CFILE%.c}.s"
+
+# Compile the C file to generate the assembly code
+gcc -S -masm=intel "$CFILE" -o "$OUTFILE"
 
