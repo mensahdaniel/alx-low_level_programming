@@ -1,2 +1,11 @@
 #!/bin/bash
-gcc -E $CFILE -O C
+
+# Input C file name
+CFILE="input.c"
+
+# Output file name for preprocessed code
+OUTPUT_FILE="output.c"
+
+# Run the C file through the preprocessor and save the result
+gcc -E "$CFILE" -o "$OUTPUT_FILE"
+
